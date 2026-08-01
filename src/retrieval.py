@@ -33,6 +33,7 @@ def retrieve(query: str, top_k: int = 5) -> list[dict]:
             {
                 "text": text,
                 "source": metadata["source"],
+                "document_title": metadata["document_title"],
                 "section": metadata["section"],
                 "distance": distance,  # plus petit = plus pertinent
             }
