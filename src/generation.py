@@ -1,3 +1,5 @@
+import sys
+
 import ollama
 
 from src.config import GENERATION_MODEL_NAME, RELEVANCE_THRESHOLD
@@ -62,5 +64,8 @@ def generate_answer(question: str, top_k: int = 5) -> str:
 
 
 if __name__ == "__main__":
-    question = "j'ai perdu mon telephone professionnel, que dois-je faire ?"
+    # Permet de tester une question au choix : `python -m src.generation <question>`.
+    # Sans argument, retombe sur une question par défaut.
+    default_question = "j'ai perdu mon telephone professionnel, que dois-je faire ?"
+    question = " ".join(sys.argv[1:]) or default_question
     print(generate_answer(question))
