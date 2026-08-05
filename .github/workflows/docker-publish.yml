@@ -24,3 +24,5 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/syphaxmedjber/company-assistant-rag:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
